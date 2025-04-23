@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawriAI - Slide 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #0a2540 0%, #105173 100%);
+            color: white;
+            overflow: hidden;
+        }
+        .title {
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #ffffff, #a3e4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .subtitle {
+            font-weight: 300;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .tech-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .highlight {
+            color: #4ade80;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col justify-center items-center relative">
+        <!-- Background elements -->
+        <div class="grid-pattern"></div>
+        <div class="circle bg-blue-500" style="width: 500px; height: 500px; bottom: -250px; right: -100px;"></div>
+        <div class="circle bg-green-500" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+        
+        <!-- Tech icons floating in background -->
+        <i class="fas fa-brain tech-icon text-5xl" style="top: 15%; left: 12%; animation-delay: 0s;"></i>
+        <i class="fas fa-chart-line tech-icon text-4xl" style="top: 25%; right: 15%; animation-delay: 1s;"></i>
+        <i class="fas fa-microchip tech-icon text-5xl" style="bottom: 20%; left: 18%; animation-delay: 2s;"></i>
+        <i class="fas fa-fingerprint tech-icon text-4xl" style="bottom: 30%; right: 20%; animation-delay: 1.5s;"></i>
+        <i class="fas fa-network-wired tech-icon text-5xl" style="top: 60%; left: 25%; animation-delay: 0.5s;"></i>
+
+        <!-- Content container -->
+        <div class="z-10 px-16 text-center">
+            <div class="mb-2">
+                <img src="Fawriai-logo-b-transparent.png" alt="FawriAI Logo" class="h-64 mx-auto mb-4">
+            </div>
+            <h1 class="title text-7xl mb-6"></h1>
+            <h2 class="title text-4xl mb-12">Intelligence Artificielle au service de la <span class="highlight">Finance Digitale</span></h2>
+            
+            <div class="subtitle text-xl mt-16 opacity-80">
+                <div class="flex items-center justify-center">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span>23/04/2025</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom decorative bar -->
+        <div class="absolute bottom-0 w-full h-2 bg-gradient-to-r from-blue-400 to-green-400"></div>
+    </div>
+</body>
+</html>

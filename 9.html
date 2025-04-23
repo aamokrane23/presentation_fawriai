@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawriAI - Slide 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #0a2540 0%, #105173 100%);
+            color: white;
+            overflow: hidden;
+        }
+        .title {
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #ffffff, #a3e4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        .module-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 222, 128, 0.5);
+        }
+        .icon-container {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .progress-container {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #4ade80, #38bdf8);
+            border-radius: 5px;
+        }
+        .check-example {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+        .highlight-area {
+            position: absolute;
+            border: 2px solid;
+            border-radius: 4px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        .confidence-meter {
+            height: 180px;
+            width: 180px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col p-10 relative">
+        <!-- Background elements -->
+        <div class="grid-pattern"></div>
+        <div class="circle bg-blue-500" style="width: 500px; height: 500px; bottom: -250px; right: -100px;"></div>
+        <div class="circle bg-green-500" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+        
+        <!-- Header -->
+        <div class="mb-6 z-10">
+            <h2 class="title text-4xl">MVP - OCR de chèques</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-green-400 mt-2"></div>
+        </div>
+        
+        <!-- Content Grid -->
+        <div class="grid grid-cols-3 gap-6 z-10 flex-grow">
+            <!-- Left Column - Modules List -->
+            <div class="flex flex-col gap-4">
+                <!-- Module 1 -->
+                <div class="module-card p-4 flex items-start">
+                    <div class="icon-container bg-blue-500 bg-opacity-20 mr-4">
+                        <i class="fas fa-language text-blue-300 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Détection de texte</h3>
+                        <p class="text-gray-300 text-sm">EasyOCR multilingue (Anglais, Français, Arabe)</p>
+                        <div class="progress-container mt-2">
+                            <div class="progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="module-card p-4 flex items-start">
+                    <div class="icon-container bg-green-500 bg-opacity-20 mr-4">
+                        <i class="fas fa-calculator text-green-300 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Vérification des montants</h3>
+                        <p class="text-gray-300 text-sm">Concordance chiffres / lettres</p>
+                        <div class="progress-container mt-2">
+                            <div class="progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 3 -->
+                <div class="module-card p-4 flex items-start">
+                    <div class="icon-container bg-purple-500 bg-opacity-20 mr-4">
+                        <i class="fas fa-signature text-purple-300 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Détection signature</h3>
+                        <p class="text-gray-300 text-sm">Identification des zones vides</p>
+                        <div class="progress-container mt-2">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Module 4 -->
+                <div class="module-card p-4 flex items-start">
+                    <div class="icon-container bg-yellow-500 bg-opacity-20 mr-4">
+                        <i class="fas fa-calendar-check text-yellow-300 text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold">Validation de date</h3>
+                        <p class="text-gray-300 text-sm">Identification des chèques périmés</p>
+                        <div class="progress-container mt-2">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Middle Column - Visualization -->
+            <div class="flex flex-col items-center justify-center">
+                <div class="check-example w-full h-64 flex items-center justify-center">
+                    <!-- Check outline -->
+                    <div class="relative w-5/6 h-4/5 border-2 border-blue-300 border-opacity-30 rounded-md bg-white bg-opacity-5 p-2">
+                        <!-- Highlighted areas -->
+                        <div class="highlight-area border-blue-400" style="top: 15%; left: 10%; width: 40%; height: 15%;">
+                            <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-blue-500 text-xs px-2 py-1 rounded-full">
+                                Bénéficiaire
+                            </div>
+                        </div>
+                        <div class="highlight-area border-green-400" style="top: 40%; left: 70%; width: 25%; height: 15%;">
+                            <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-green-500 text-xs px-2 py-1 rounded-full">
+                                Montant
+                            </div>
+                        </div>
+                        <div class="highlight-area border-purple-400" style="top: 65%; left: 75%; width: 20%; height: 25%;">
+                            <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-purple-500 text-xs px-2 py-1 rounded-full">
+                                Signature
+                            </div>
+                        </div>
+                        <div class="highlight-area border-yellow-400" style="top: 15%; left: 70%; width: 25%; height: 15%;">
+                            <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-yellow-500 text-xs px-2 py-1 rounded-full">
+                                Date
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <h3 class="font-semibold">Détection intelligente des zones clés</h3>
+                    <p class="text-gray-300 text-sm mt-2">Identification et analyse automatique des champs importants</p>
+                </div>
+            </div>
+            
+            <!-- Right Column - Output -->
+            <div class="flex flex-col">
+                <div class="module-card p-5 flex flex-col items-center mb-6">
+                    <h3 class="font-semibold mb-4 text-center">Score de confiance</h3>
+                    <div class="confidence-meter">
+                        <canvas id="confidenceChart"></canvas>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-3xl font-bold">94%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="module-card p-5">
+                    <h3 class="font-semibold mb-3">Rapport d'analyse</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Tous les champs obligatoires détectés</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Montant en chiffres = montant en lettres</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Signature présente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-400 mt-1 mr-2"></i>
+                            <span>Date proche de la limite (15 jours)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-400 mt-1 mr-2"></i>
+                            <span>Validité globale: Approuvé</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom decorative bar -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-green-400"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('confidenceChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [94, 6],
+                        backgroundColor: [
+                            'rgba(74, 222, 128, 0.8)',
+                            'rgba(255, 255, 255, 0.1)'
+                        ],
+                        borderWidth: 0,
+                        cutout: '80%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    animation: {
+                        animateRotate: true
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

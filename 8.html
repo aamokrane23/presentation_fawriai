@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawriAI - Slide 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            font-family: 'Montserrat', sans-serif;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE & Edge */
+        }
+        body::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #0a2540 0%, #105173 100%);
+            color: white;
+            overflow: visible;
+        }
+        .title {
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #ffffff, #a3e4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        .phase-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 222, 128, 0.5);
+        }
+        .timeline {
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 6px;
+            margin-left: -3px;
+            background: linear-gradient(to bottom, #4299e1, #4ade80);
+            border-radius: 20px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .timeline-content {
+            width: 45%;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .timeline-left {
+            left: 0;
+        }
+        .timeline-right {
+            left: 55%;
+        }
+        .timeline-dot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: 50%;
+            margin-left: -12px;
+            background: #4ade80;
+            border-radius: 50%;
+            border: 4px solid #0a2540;
+            z-index: 10;
+        }
+        .foundation-card {
+            background: linear-gradient(135deg, rgba(66, 153, 225, 0.2), rgba(74, 222, 128, 0.2));
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col p-10 relative">
+        <!-- Background elements -->
+        <div class="grid-pattern"></div>
+        <div class="circle bg-blue-500" style="width: 500px; height: 500px; bottom: -250px; right: -100px;"></div>
+        <div class="circle bg-green-500" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+        
+        <!-- Header -->
+        <div class="mb-6 z-10">
+            <h2 class="title text-4xl">Vision FawriAI</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-green-400 mt-2"></div>
+        </div>
+        
+        <!-- Timeline / Roadmap -->
+        <div class="timeline z-10 flex-grow">
+            <!-- Phase 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot" style="top: 50px;"></div>
+                <div class="timeline-content timeline-left phase-card">
+                    <div class="flex items-start">
+                        <div class="mr-4 p-3 bg-blue-500 bg-opacity-20 rounded-full">
+                            <i class="fas fa-file-invoice text-3xl text-blue-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Phase 1</h3>
+                            <h4 class="text-lg font-medium text-blue-300 mb-2">OCR de chèques</h4>
+                            <p class="text-gray-300">Reconnaissance optique des caractères pour automatiser le traitement des chèques</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-blue-600 bg-opacity-20 text-blue-300 rounded-md text-xs">Détection de champs</span>
+                                <span class="px-2 py-1 bg-blue-600 bg-opacity-20 text-blue-300 rounded-md text-xs">Validation automatique</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Phase 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot" style="top: 60px;"></div>
+                <div class="timeline-content timeline-right phase-card">
+                    <div class="flex items-start">
+                        <div class="mr-4 p-3 bg-purple-500 bg-opacity-20 rounded-full">
+                            <i class="fas fa-microphone text-3xl text-purple-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Phase 2</h3>
+                            <h4 class="text-lg font-medium text-purple-300 mb-2">Commande vocale intelligente</h4>
+                            <p class="text-gray-300">Interface vocale avancée sécurisée par biométrie vocale pour l'accès aux services</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-purple-600 bg-opacity-20 text-purple-300 rounded-md text-xs">Biométrie vocale</span>
+                                <span class="px-2 py-1 bg-purple-600 bg-opacity-20 text-purple-300 rounded-md text-xs">Commandes naturelles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Phase 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot" style="top: 60px;"></div>
+                <div class="timeline-content timeline-left phase-card">
+                    <div class="flex items-start">
+                        <div class="mr-4 p-3 bg-green-500 bg-opacity-20 rounded-full">
+                            <i class="fas fa-shield-alt text-3xl text-green-300"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Phase 3</h3>
+                            <h4 class="text-lg font-medium text-green-300 mb-2">Détection de fraude & Scoring</h4>
+                            <p class="text-gray-300">Systèmes avancés de détection d'anomalies comportementales et d'évaluation de risque</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-green-600 bg-opacity-20 text-green-300 rounded-md text-xs">Analyse comportementale</span>
+                                <span class="px-2 py-1 bg-green-600 bg-opacity-20 text-green-300 rounded-md text-xs">Scoring dynamique</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Foundation -->
+        <div class="foundation-card p-6 mt-6 z-10">
+            <h3 class="text-xl font-semibold mb-4">Fondation</h3>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="flex items-center">
+                    <div class="feature-icon bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-cubes text-blue-300"></i>
+                    </div>
+                    <span>IA modulaire</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="feature-icon bg-green-500 bg-opacity-20">
+                        <i class="fas fa-balance-scale text-green-300"></i>
+                    </div>
+                    <span>IA responsable</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="feature-icon bg-yellow-500 bg-opacity-20">
+                        <i class="fas fa-history text-yellow-300"></i>
+                    </div>
+                    <span>IA traçable</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="feature-icon bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-chart-line text-purple-300"></i>
+                    </div>
+                    <span>IA évolutive</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom decorative bar -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-green-400"></div>
+    </div>
+</body>
+</html>

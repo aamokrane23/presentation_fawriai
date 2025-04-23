@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawriAI - Pourquoi Fawri peut réussir</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #0a2540 0%, #105173 100%);
+            color: white;
+            overflow: visible;
+        }
+        .title {
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #ffffff, #a3e4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .success-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .success-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 222, 128, 0.5);
+        }
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 16px;
+        }
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col p-10 relative">
+        <!-- Background elements -->
+        <div class="grid-pattern"></div>
+        
+        <!-- Header -->
+        <div class="mb-8 z-10">
+            <h2 class="title text-4xl">Pourquoi Fawri peut réussir là où d'autres échouent</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-green-400 mt-2"></div>
+        </div>
+        
+        <!-- Success Factors Grid -->
+        <div class="grid grid-cols-2 gap-8 z-10">
+            <!-- Left Column -->
+            <div class="space-y-6">
+                <!-- Infrastructure IA -->
+                <div class="success-card p-6">
+                    <div class="feature-icon pulse">
+                        <i class="fas fa-server text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Infrastructure IA locale déjà en place</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>Serveurs haute performance</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>Intégration système complète</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision numérique -->
+                <div class="success-card p-6">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Vision numérique claire et alignée</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>Objectifs stratégiques définis</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>KPIs mesurables établis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column -->
+            <div class="space-y-6">
+                <!-- Expertise réglementaire -->
+                <div class="success-card p-6">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Expertise réglementaire nationale</h3>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="px-3 py-1 bg-yellow-500 bg-opacity-20 rounded-full text-sm">CNDP</span>
+                        <span class="px-3 py-1 bg-yellow-500 bg-opacity-20 rounded-full text-sm">Bank Al-Maghrib</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                        <span>Conformité réglementaire assurée</span>
+                    </div>
+                </div>
+                
+                <!-- Culture d'innovation -->
+                <div class="success-card p-6">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Forte culture d'innovation</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-rocket text-blue-400 mr-2"></i>
+                            <span>Innovation continue</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-purple-400 mr-2"></i>
+                            <span>Équipe agile</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-brain text-yellow-400 mr-2"></i>
+                            <span>Expertise IA</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-green-400 mr-2"></i>
+                            <span>Croissance rapide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Success Metrics -->
+        <div class="mt-8 z-10">
+            <div class="success-card p-6">
+                <div class="grid grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-blue-400 mb-2">100%</div>
+                        <div class="text-sm text-gray-300">Infrastructure<br>locale</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-400 mb-2">24/7</div>
+                        <div class="text-sm text-gray-300">Disponibilité<br>système</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-yellow-400 mb-2">+95%</div>
+                        <div class="text-sm text-gray-300">Précision<br>IA</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-green-400 mb-2">-60%</div>
+                        <div class="text-sm text-gray-300">Temps de<br>traitement</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom decorative bar -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-green-400"></div>
+    </div>
+</body>
+</html>

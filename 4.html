@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FawriAI - Slide 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-color: #0a2540;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .slide-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: top left;
+      width: 1280px;
+      height: 720px;
+      background: linear-gradient(135deg, #0a2540 0%, #105173 100%);
+      color: white;
+      overflow: hidden;
+    }
+
+    .title {
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(90deg, #ffffff, #a3e4ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .grid-pattern {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+    }
+
+    .opportunity-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .opportunity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border-color: rgba(74, 222, 128, 0.5);
+    }
+
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 3px;
+    }
+
+    .benefit-tag {
+      display: inline-block;
+      background: rgba(74, 222, 128, 0.2);
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      color: #4ade80;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin: 0 5px 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="slide" class="slide-wrapper p-10 flex flex-col">
+    <div class="grid-pattern"></div>
+    <div class="circle bg-blue-500" style="width: 500px; height: 500px; bottom: -250px; right: -100px;"></div>
+    <div class="circle bg-green-500" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+
+    <div class="mb-6 z-10">
+      <h2 class="title text-4xl">Opportunités IA pour Fawri</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-green-400 mt-2"></div>
+    </div>
+
+    <div class="grid grid-cols-3 gap-6 z-10 flex-grow">
+      <!-- CARD 1 -->
+      <div class="opportunity-card p-6 flex flex-col">
+        <div class="icon-container bg-blue-500 bg-opacity-20"><i class="fas fa-id-card text-3xl text-blue-300"></i></div>
+        <h3 class="text-xl font-semibold mb-2">KYC & Onboarding</h3>
+        <div class="mb-3">
+          <span class="tech-tag bg-blue-600 bg-opacity-30 text-blue-300">OCR</span>
+          <span class="tech-tag bg-blue-600 bg-opacity-30 text-blue-300">Reconnaissance faciale</span>
+          <span class="tech-tag bg-blue-600 bg-opacity-30 text-blue-300">Reconnaissance vocale</span>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">Automatisation du processus d'authentification et de vérification d'identité</p>
+        <div class="mt-auto">
+          <div class="benefit-tag"><i class="fas fa-clock mr-1"></i> Gain de temps</div>
+          <div class="benefit-tag"><i class="fas fa-shield-alt mr-1"></i> Détection de fraude</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="opportunity-card p-6 flex flex-col">
+        <div class="icon-container bg-green-500 bg-opacity-20"><i class="fas fa-money-check text-3xl text-green-300"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Traitement des chèques</h3>
+        <div class="mb-3">
+          <span class="tech-tag bg-green-600 bg-opacity-30 text-green-300">Vision</span>
+          <span class="tech-tag bg-green-600 bg-opacity-30 text-green-300">NLP</span>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">Lecture, validation et traitement automatisés des chèques bancaires</p>
+        <div class="mt-auto">
+          <div class="benefit-tag"><i class="fas fa-cogs mr-1"></i> Automatisation</div>
+          <div class="benefit-tag"><i class="fas fa-check-double mr-1"></i> Zéro erreur manuelle</div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="opportunity-card p-6 flex flex-col">
+        <div class="icon-container bg-purple-500 bg-opacity-20"><i class="fas fa-microphone-alt text-3xl text-purple-300"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Assistant vocal</h3>
+        <div class="mb-3">
+          <span class="tech-tag bg-purple-600 bg-opacity-30 text-purple-300">Commande vocale</span>
+          <span class="tech-tag bg-purple-600 bg-opacity-30 text-purple-300">IA</span>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">Interface conversationnelle intelligente pour les services bancaires</p>
+        <div class="mt-auto">
+          <div class="benefit-tag"><i class="fas fa-clock mr-1"></i> Accessibilité 24/7</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="opportunity-card p-6 flex flex-col">
+        <div class="icon-container bg-red-500 bg-opacity-20"><i class="fas fa-shield-virus text-3xl text-red-300"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Détection de fraude</h3>
+        <div class="mb-3">
+          <span class="tech-tag bg-red-600 bg-opacity-30 text-red-300">Anomalie comportementale</span>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">Analyse des modèles de transaction pour identifier les activités suspectes</p>
+        <div class="mt-auto">
+          <div class="benefit-tag"><i class="fas fa-lock mr-1"></i> Sécurité temps réel</div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="opportunity-card p-6 flex flex-col">
+        <div class="icon-container bg-yellow-500 bg-opacity-20"><i class="fas fa-chart-bar text-3xl text-yellow-300"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Scoring intelligent</h3>
+        <div class="mb-3">
+          <span class="tech-tag bg-yellow-600 bg-opacity-30 text-yellow-300">Modèles prédictifs</span>
+        </div>
+        <p class="text-gray-300 text-sm mb-4">Évaluation du risque de crédit basée sur des données alternatives et comportementales</p>
+        <div class="mt-auto">
+          <div class="benefit-tag"><i class="fas fa-users mr-1"></i> Inclusion financière</div>
+        </div>
+      </div>
+
+      <!-- ILLUSTRATION -->
+      <div class="flex items-center justify-center">
+        <div class="relative w-full h-full flex items-center justify-center">
+          <div class="absolute inset-0 bg-blue-500 bg-opacity-10 rounded-xl border border-blue-400 border-opacity-30"></div>
+          <div class="z-10 text-center p-4">
+            <i class="fas fa-robot text-6xl mb-4 text-blue-300"></i>
+            <p class="text-lg font-semibold">L'IA au cœur de votre stratégie financière</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-green-400"></div>
+  </div>
+
+  <script>
+    function scaleSlide() {
+      const baseWidth = 1280;
+      const baseHeight = 720;
+      const scaleX = window.innerWidth / baseWidth;
+      const scaleY = window.innerHeight / baseHeight;
+      const scale = Math.min(scaleX, scaleY);
+      const slide = document.getElementById('slide');
+      slide.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+
+    window.addEventListener('resize', scaleSlide);
+    window.addEventListener('load', scaleSlide);
+  </script>
+</body>
+</html>

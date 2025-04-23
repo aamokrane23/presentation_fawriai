@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawriAI - Et si on allait plus loin ?</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #0a2540 0%, #105173 100%);
+            color: white;
+            overflow: visible;
+        }
+        .title {
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #ffffff, #a3e4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .future-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .future-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(74, 222, 128, 0.5);
+        }
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 16px;
+        }
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(74, 222, 128, 0.8);
+            }
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col p-10 relative">
+        <!-- Background elements -->
+        <div class="grid-pattern"></div>
+        
+        <!-- Header -->
+        <div class="mb-8 z-10">
+            <h2 class="title text-4xl">Et si on allait plus loin ?</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-green-400 mt-2"></div>
+        </div>
+        
+        <!-- Future Features Grid -->
+        <div class="grid grid-cols-3 gap-8 z-10">
+            <!-- IA Support Client -->
+            <div class="future-card p-6 glow">
+                <div class="feature-icon bg-blue-500 bg-opacity-20">
+                    <i class="fas fa-headset text-blue-300"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">IA de support client intelligent</h3>
+                <p class="text-gray-300 mb-4">Assistant virtuel avancé capable de gérer les requêtes complexes et personnalisées</p>
+                <div class="space-y-2">
+                    <div class="tech-tag bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-brain mr-2"></i>
+                        NLP avancé
+                    </div>
+                    <div class="tech-tag bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-comment-dots mr-2"></i>
+                        Dialogue contextuel
+                    </div>
+                    <div class="tech-tag bg-blue-500 bg-opacity-20">
+                        <i class="fas fa-language mr-2"></i>
+                        Multilingue
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segmentation comportementale -->
+            <div class="future-card p-6">
+                <div class="feature-icon bg-purple-500 bg-opacity-20">
+                    <i class="fas fa-users-cog text-purple-300"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Segmentation comportementale prédictive</h3>
+                <p class="text-gray-300 mb-4">Analyse dynamique des profils clients pour des offres ultra-personnalisées</p>
+                <div class="space-y-2">
+                    <div class="tech-tag bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-chart-pie mr-2"></i>
+                        Clustering avancé
+                    </div>
+                    <div class="tech-tag bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-history mr-2"></i>
+                        Historique transactionnel
+                    </div>
+                    <div class="tech-tag bg-purple-500 bg-opacity-20">
+                        <i class="fas fa-bullseye mr-2"></i>
+                        Ciblage précis
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Analyse temps réel -->
+            <div class="future-card p-6">
+                <div class="feature-icon bg-green-500 bg-opacity-20">
+                    <i class="fas fa-chart-line text-green-300"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Analyse en temps réel des flux</h3>
+                <p class="text-gray-300 mb-4">Surveillance et optimisation continue des flux de trésorerie</p>
+                <div class="space-y-2">
+                    <div class="tech-tag bg-green-500 bg-opacity-20">
+                        <i class="fas fa-tachometer-alt mr-2"></i>
+                        Temps réel
+                    </div>
+                    <div class="tech-tag bg-green-500 bg-opacity-20">
+                        <i class="fas fa-chart-bar mr-2"></i>
+                        Visualisation dynamique
+                    </div>
+                    <div class="tech-tag bg-green-500 bg-opacity-20">
+                        <i class="fas fa-bell mr-2"></i>
+                        Alertes intelligentes
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vision statement -->
+        <div class="mt-8 z-10">
+            <div class="future-card p-6 text-center">
+                <p class="text-xl">
+                    <span class="text-blue-400">L'innovation</span> est un voyage, pas une destination. 
+                    Nous construisons aujourd'hui la banque de 
+                    <span class="text-green-400">demain</span>.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Bottom decorative bar -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-green-400"></div>
+    </div>
+</body>
+</html>

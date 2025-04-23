@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FawriAI - Slide 4</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            background: linear-gradient(135deg, #0a2540 0%, #105173 100%);
+            color: white;
+            overflow: visible;
+        }
+        .title {
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(90deg, #ffffff, #a3e4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        .security-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .security-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+        .icon-container {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .tech-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 3px;
+        }
+        .pulse {
+            animation: pulse-animation 2s infinite;
+        }
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        .security-feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .security-feature-item i {
+            color: #4ade80;
+            margin-right: 8px;
+        }
+        .shield-container {
+            position: relative;
+            height: 250px;
+        }
+        .shield-layer {
+            position: absolute;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: rotate-shield 20s linear infinite;
+        }
+        @keyframes rotate-shield {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col p-10 relative">
+        <!-- Background elements -->
+        <div class="grid-pattern"></div>
+        <div class="circle bg-red-500" style="width: 500px; height: 500px; bottom: -250px; right: -100px;"></div>
+        <div class="circle bg-blue-500" style="width: 300px; height: 300px; top: -100px; left: -100px;"></div>
+        
+        <!-- Header -->
+        <div class="mb-6 z-10">
+            <h2 class="title text-4xl">Sécurité au cœur du projet</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-red-400 to-blue-400 mt-2"></div>
+        </div>
+        
+        <!-- Security Features Grid -->
+        <div class="grid grid-cols-2 gap-8 z-10 flex-grow">
+            <!-- Left Column - Security Cards -->
+            <div class="flex flex-col gap-6">
+                <!-- Clonage vocal -->
+                <div class="security-card p-6 flex items-start">
+                    <div class="icon-container bg-red-500 bg-opacity-20 pulse">
+                        <i class="fas fa-microphone-slash text-3xl text-red-300"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-xl font-semibold mb-3">Clonage vocal</h3>
+                        <p class="text-gray-300 text-sm mb-3">Protection contre l'usurpation d'identité vocale grâce à des technologies de pointe</p>
+                        <div class="space-y-2">
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Analyse spectrale avancée</span>
+                            </div>
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Modèles anti-spoof (ex. ASVspoof)</span>
+                            </div>
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Détection des synthèses vocales</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Falsification de chèques -->
+                <div class="security-card p-6 flex items-start">
+                    <div class="icon-container bg-blue-500 bg-opacity-20 pulse">
+                        <i class="fas fa-file-invoice-dollar text-3xl text-blue-300"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-xl font-semibold mb-3">Falsification de chèques</h3>
+                        <p class="text-gray-300 text-sm mb-3">Système intelligent pour détecter les manipulations frauduleuses</p>
+                        <div class="space-y-2">
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Détection de zones modifiées</span>
+                            </div>
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Identification de signature manquante</span>
+                            </div>
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Vérification des incohérences de montants</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure IA conforme -->
+                <div class="security-card p-6 flex items-start">
+                    <div class="icon-container bg-green-500 bg-opacity-20 pulse">
+                        <i class="fas fa-shield-alt text-3xl text-green-300"></i>
+                    </div>
+                    <div class="ml-5">
+                        <h3 class="text-xl font-semibold mb-3">Infrastructure IA conforme</h3>
+                        <p class="text-gray-300 text-sm mb-3">Une architecture respectant les régulations nationales</p>
+                        <div class="space-y-2">
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Conformité CNDP (Commission Nationale)</span>
+                            </div>
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Standards Bank Al-Maghrib</span>
+                            </div>
+                            <div class="security-feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Logs, accès local, auditabilité complète</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Security Shield Visualization -->
+            <div class="flex items-center justify-center">
+                <div class="w-full h-full flex flex-col items-center justify-center">
+                    <div class="shield-container w-full">
+                        <!-- Central Shield Icon -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
+                            <div class="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-red-500 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-shield-alt text-white text-5xl"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Rotating Security Features -->
+                        <div class="shield-layer" style="width: 220px; height: 220px; border: 2px dashed rgba(239, 68, 68, 0.3);">
+                            <div class="absolute -left-6 -translate-y-1/2 bg-red-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-fingerprint text-red-300 text-2xl"></i>
+                            </div>
+                            <div class="absolute -right-6 -translate-y-1/2 bg-blue-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-user-shield text-blue-300 text-2xl"></i>
+                            </div>
+                            <div class="absolute -top-6 -translate-x-1/2 bg-green-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-lock text-green-300 text-2xl"></i>
+                            </div>
+                            <div class="absolute -bottom-6 -translate-x-1/2 bg-yellow-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-eye-slash text-yellow-300 text-2xl"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="shield-layer" style="width: 300px; height: 300px; border: 2px dashed rgba(37, 99, 235, 0.2); animation-duration: 25s; animation-direction: reverse;">
+                            <div class="absolute -left-6 -translate-y-1/2 bg-purple-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-server text-purple-300 text-2xl"></i>
+                            </div>
+                            <div class="absolute -right-6 -translate-y-1/2 bg-indigo-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-database text-indigo-300 text-2xl"></i>
+                            </div>
+                            <div class="absolute -top-6 -translate-x-1/2 bg-blue-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-passport text-blue-300 text-2xl"></i>
+                            </div>
+                            <div class="absolute -bottom-6 -translate-x-1/2 bg-green-500 bg-opacity-20 rounded-full p-3">
+                                <i class="fas fa-file-contract text-green-300 text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <h3 class="text-xl font-semibold mb-3">Protection multicouches</h3>
+                        <p class="text-gray-300">Une architecture de sécurité robuste qui protège les données sensibles<br>et assure l'intégrité des transactions financières</p>
+                        <div class="mt-4 flex justify-center gap-4">
+                            <span class="tech-tag bg-red-600 bg-opacity-30 text-red-300">Anti-Spoofing</span>
+                            <span class="tech-tag bg-blue-600 bg-opacity-30 text-blue-300">Détection de fraude</span>
+                            <span class="tech-tag bg-green-600 bg-opacity-30 text-green-300">Conformité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom decorative bar -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-red-400 to-blue-400"></div>
+    </div>
+</body>
+</html>
